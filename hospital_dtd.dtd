@@ -1,0 +1,29 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT hospitalinfo (services,contact+)>
+<!ATTLIST hospitalinfo
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT services (speciality,list+)>
+<!ATTLIST services
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT contact (info)>
+<!ATTLIST contact
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT speciality (#PCDATA)>
+<!ATTLIST speciality
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT list (ul)>
+<!ATTLIST list
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT info (#PCDATA)>
+<!ATTLIST info
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT ul (#PCDATA)>
+<!ATTLIST ul
+  xmlns CDATA #FIXED ''>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body{
+   Background-image:url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/a-z-hospital-departments-1566209638.jpg');
+}
+.topnav {
+  overflow: hidden;
+  background-color:#f2f2f2;
+}
+.topnav a {
+  float: right;
+  color: #333;
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.topnav p {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.topnav a:hover {
+  background-color: #23D6E9;
+  color: black;
+}
+#header{
+  color: black;
+  padding: 40px;
+}
+.button {
+  background-color: #129EA9;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <p><b><i>XYZ Health Care</i></b></p>
+  <a href="" onclick="loadSpecialityDoc()">Specialities</a>
+  <a href="doctor_info.xml">Doctor Info</a>
+<a class="active" href="#home">Home</a>
+</div>
+<h1 id="header"><center>TAKE THE WORLD'S BEST QUALITY<TREATMENT<center></h1>
+<p><center><i>WE CARE FOR YOUR HEALTH</i></center></p><br>
+<p><center><button class="button" onclick="loadXMLDoc()">CONTACT US</button></center></p>
+<p id="demo"></p>
+<br><br>
+<p><center><button class="button" onclick="loadSpecialityDoc()">Specialities</button> </center></p>
+<p id="sp"><b>LIST OF SPECIALITIES</b></p>
+
+<script>
+
+<!-- XML PATH-->
+
+function loadXMLDoc(){
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        showResult(xhttp.responseXML);
+    }
+};
+xhttp.open("GET", "hospital_info.xml", true);
+xhttp.send(); 
+}
+
+function showResult(xml) {
+    var txt = "";
+    path = "/hospitalinfo/contact/info";
+    if (xml.evaluate) {
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        while (result) {
+            txt += result.childNodes[0].nodeValue + "<br>";
+            result = nodes.iterateNext();
+        } 
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+
+<!-- DOM PARSER -->
+
+function loadSpecialityDoc(){
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+};
+xhttp.open("GET", "hospital_info.xml", true);
+xhttp.send();
+}
+
+function myFunction(xml) {
+  var x, i, xmlDoc, table;
+  xmlDoc = xml.responseXML;
+  table = "<tr><th><b>LIST OF SPECIALITIES</b></th></tr><br>";
+  x = xmlDoc.getElementsByTagName("list")
+  for (i = 0; i < x.length; i++) { 
+    table += "<tr><td>" + (i+1)+"."+
+    x[i].getElementsByTagName("ul")[0].childNodes[0].nodeValue + "</td></tr><br>";
+  }
+  document.getElementById("sp").innerHTML = table;
+}
+</script>
+
+
+</body>
+</html>

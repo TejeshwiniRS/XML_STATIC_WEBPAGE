@@ -1,0 +1,50 @@
+<?xml version = "1.0"?> 
+ 
+<?xml-stylesheet type = "text/xsl" href = "docinfo.xsl"?>   <!-- LINKING XSLT DOC TO XSL DOC-->
+
+<doctorinfo>    <!--root element-->
+
+<personalinfo did="01">  <!--child element-->
+<name>USHA</name>  <!--subchild element-->
+<cno>7866543210</cno>
+<exp>10yrs</exp>
+<speciality>ORTHOLOGIST</speciality>
+</personalinfo>
+
+<personalinfo did="02">
+<name>SUBASRI</name>
+<cno>9876543210</cno>
+<exp>5yrs</exp>
+<speciality>CARIOLOGIST</speciality>
+</personalinfo>
+
+<personalinfo did="03">
+<name>HARIDAS</name>
+<cno>P9876234190</cno>
+<exp>20yrs</exp>
+<speciality>CARIOLOGIST</speciality>
+</personalinfo>
+
+<personalinfo did="04">
+<name>ASHWIN</name>
+<cno>9983240631</cno>
+<exp>1yr</exp>
+<speciality>OPTHOMOLOGIST</speciality>
+</personalinfo>
+
+<personalinfo did="05">
+<name>VANDHANA</name>
+<cno>865412309</cno>
+<exp>2yrs</exp>
+<speciality>NEPHROLOGIST</speciality>
+</personalinfo>
+
+<personalinfo did="06">
+<name>TEJESHWINI</name>
+<cno>9087654321</cno>
+<exp>3yrs</exp>
+<speciality>NEUROLOGIST</speciality>
+</personalinfo>
+
+</doctorinfo>
+

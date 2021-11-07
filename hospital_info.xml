@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hospitalinfo SYSTEM "hospital_dtd.dtd"> <!--LINKING DTD WITH XML DOC-->
+
+<hospitalinfo>  <!--root element-->
+<services>    <!--child element-->
+<speciality>SPECIALITIES</speciality>   <!--subchild element-->
+<list>
+<ul>Ortho</ul></list>
+<list><ul>Cardio</ul></list>
+<list><ul>Optho</ul></list>
+<list><ul>Nephro</ul></list>
+<list><ul>Neuro</ul></list>
+<list><ul>onco</ul></list>
+</services>
+<contact>  <!--sibling of child element-->
+<info>ADDRESS   : Rajaji nagar,Bangalore</info>
+</contact>
+<contact>  <!--sibling of child element-->
+<info>PHONE NO :9876543210</info>
+</contact>
+<contact>  <!--sibling of child element-->
+<info>EMAIL ID :xyzhospital@yahoo.com</info>
+</contact>
+</hospitalinfo>
